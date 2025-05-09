@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "Sistem Mikro",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 160.2, "left": 22, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 163.8, "left": -288.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 390.4,
+      "left": 101.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 119.2, "left": 69.42, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 127.2,
+      "left": 289.8,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -2, "left": 67.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 249,
+      "left": 166.2,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "bb1:bn.1", "uno:GND.3", "black", [ "v27.5", "h-165.6" ] ],
+    [ "uno:5", "bb1:30t.e", "green", [ "v-19.2", "h80.6", "v220.8", "h326.4" ] ],
+    [ "bb1:29t.e", "bb1:bp.24", "red", [ "v0" ] ],
+    [ "bb1:18t.c", "uno:2", "green", [ "h-220.8", "v-67.2", "h-42.5" ] ],
+    [ "bb1:16b.j", "bb1:bn.13", "black", [ "v0" ] ],
+    [ "bb1:8t.b", "uno:7", "green", [ "h-96", "v-86.4", "h-118.8" ] ],
+    [ "bb1:9t.e", "bb1:bp.7", "black", [ "v0" ] ],
+    [ "uno:6", "servo1:PWM", "green", [ "v-105.6", "h99.7", "v-0.2" ] ],
+    [ "uno:5V", "bb1:bp.1", "red", [ "v47.9", "h138.2", "v-56.7" ] ],
+    [ "bb1:bp.25", "bb1:tp.25", "red", [ "v-0.9", "h40", "v-173.1" ] ],
+    [ "bb1:bn.25", "bb1:tn.25", "black", [ "v-1.3", "h59.2", "v-172.8" ] ],
+    [ "servo1:GND", "bb1:tn.1", "black", [ "h-28.8", "v9.6" ] ],
+    [ "servo1:V+", "bb1:tp.1", "red", [ "h-19.2", "v115.3" ] ],
+    [ "bb1:bp.5", "bb1:6b.j", "red", [ "v0" ] ],
+    [ "bb1:6b.f", "bb1:7t.e", "red", [ "v-19.2", "h9.6" ] ],
+    [ "lcd1:VCC", "bb1:bp.3", "red", [ "h-28.8", "v-85.4" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-153.6", "v-86.1" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-134.4", "v-95.6" ] ],
+    [ "lcd1:GND", "bb1:bn.5", "black", [ "h0" ] ],
+    [ "pir1:VCC", "bb1:7t.a", "", [ "$bb" ] ],
+    [ "pir1:OUT", "bb1:8t.a", "", [ "$bb" ] ],
+    [ "pir1:GND", "bb1:9t.a", "", [ "$bb" ] ],
+    [ "btn1:1.l", "bb1:18t.d", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb1:16t.d", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb1:18b.i", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb1:16b.i", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:29t.a", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:30t.a", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
