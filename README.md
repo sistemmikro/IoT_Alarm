@@ -7,3 +7,4 @@ Ketua : Irsan M Ramdan – 24552012024​
 Anggota 1 : Rian Setiawan – 24552012025
 
 Simulator : Wokwi
+
